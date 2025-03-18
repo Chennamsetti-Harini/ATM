@@ -71,6 +71,21 @@ while True:
         accno = int(input("Enter Account Number: "))
         if accno not in accounts:
             print("Account Does not Exists")
+        else:
+            pin = int(input("Enter Pin: "))
+            if pin != accounts[accno][-1]:
+                print("Invalid Pin")
+            else:
+                print(f"Name: {accounts[accno][0]}")
+                print(f"Account Number: {accno}")
+                dob = accounts[accno][1].split("-")
+                date = dob[0]
+                month = dobm[int(dob[1])]
+                year = dob[2]
+                dob = date + "-" + month + "-" + year
+                print(f"Date of Birth: {dob}")
+                print(f"Account Balance: {accounts[accno][-2]}")
+        print("**********************")
     elif option == 5:
          accno = int(input("Enter Account Number: "))
          if accno not in accounts:
